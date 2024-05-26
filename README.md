@@ -49,7 +49,7 @@ continuously listening for and processing new speech commands.
 9. The buffer is reset, and the process repeats, continuously listening for and
 transcribing speech until the program is manually interrupted.
 
-Referenecs:
+References:
 
 [1] https://github.com/AI4Bharat/NPTEL2020- Indian-English-Speech-Dataset
 
