@@ -49,8 +49,8 @@ continuously listening for and processing new speech commands.
 transcribing speech until the program is manually interrupted.
 
 Referenecs:
-[1]. https://github.com/AI4Bharat/NPTEL2020- Indian-English-Speech-Dataset
-[2]. https://github.com/Nikorasu/LiveWhisper
+[1] https://github.com/AI4Bharat/NPTEL2020- Indian-English-Speech-Dataset
+[2] https://github.com/Nikorasu/LiveWhisper
 
 Future Scope:
 For working in a noisy environment other than using existing technologies like ANC (Active Noise Cancellation) or Directional microphones, we can implement the proposed neural network based denoising and speech enhancement methods.
