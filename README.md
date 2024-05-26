@@ -56,4 +56,5 @@ References:
 [2] https://github.com/Nikorasu/LiveWhisper
 
 Future Scope:
+
 For working in a noisy environment other than using existing technologies like ANC (Active Noise Cancellation) or Directional microphones, we can implement the proposed neural network based denoising and speech enhancement methods.
