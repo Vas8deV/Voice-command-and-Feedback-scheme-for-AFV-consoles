@@ -13,6 +13,10 @@ Requirements:
 - scipy 1.8.0
 - pyttsx3 2.90 (python-TTS text to speech library)
 
+Flowchart:
+![Uploading image.png…]()
+
+
 Features of System:
 1. The system remains active and listens for user commands once initiated. It
 can only be stopped by the user through manual interruption.
