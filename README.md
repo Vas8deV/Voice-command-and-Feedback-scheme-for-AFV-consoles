@@ -1,4 +1,4 @@
-![image](https://github.com/Vas8deV/Voice-command-and-Feedback-scheme-for-AFV-consoles/assets/126313237/27f80e92-2f87-4ea6-bcc9-2ec854e53f60)# Voice-command-and-Feedback-scheme-for-AFV-consoles
+# Voice-command-and-Feedback-scheme-for-AFV-consoles
 This project develops a real-time speech recognition system for a vehicle console, utilizing OpenAI's Whisper model. The system converts spoken commands into text and provides spoken responses for user interaction.
 
 Requirements:
@@ -14,6 +14,7 @@ Requirements:
 - pyttsx3 2.90 (python-TTS text to speech library)
 
 Flowchart:
+![flowcdraft](https://github.com/Vas8deV/Voice-command-and-Feedback-scheme-for-AFV-consoles/assets/126313237/da8a7828-1584-4865-8ceb-0a7d0a332ca5)
 
 Features of System:
 1. The system remains active and listens for user commands once initiated. It
