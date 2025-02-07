@@ -55,7 +55,7 @@ transcribing speech until the program is manually interrupted.
 
 ## References:
 
-[1] https://github.com/AI4Bharat/NPTEL2020- Indian-English-Speech-Dataset
+[1] [https://github.com/AI4Bharat/NPTEL2020- Indian-English-Speech-Dataset](https://github.com/AI4Bharat/NPTEL2020-Indian-English-Speech-Dataset)
 
 [2] https://github.com/Nikorasu/LiveWhisper
 
