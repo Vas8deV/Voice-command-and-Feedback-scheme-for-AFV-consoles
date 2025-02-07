@@ -1,7 +1,9 @@
 # Voice-command-and-Feedback-scheme-for-AFV-consoles
+
 This project develops a real-time speech recognition system for a vehicle console, utilizing OpenAI's Whisper model. The system converts spoken commands into text and provides spoken responses for user interaction.
 
 ## Requirements:
+
 - python 3.10.12
 - Linux/Windows
 - ffmpeg
@@ -13,11 +15,12 @@ This project develops a real-time speech recognition system for a vehicle consol
 - scipy 1.8.0
 - pyttsx3 2.90 (python-TTS text to speech library)
 
-Flowchart:
+## Flowchart:
 
 ![flowcdraft](https://github.com/Vas8deV/Voice-command-and-Feedback-scheme-for-AFV-consoles/assets/126313237/da8a7828-1584-4865-8ceb-0a7d0a332ca5)
 
-Features of System:
+## Features of System:
+
 1. The system remains active and listens for user commands once initiated. It
 can only be stopped by the user through manual interruption.
 2. The system prioritizes ongoing tasks like transcription or speech synthesis. It
@@ -32,7 +35,8 @@ through synthesized speech.
 6. Voice mode can be deactivated by either user-spoken exit keywords or
 automatically after a period of silence exceeding a set threshold.
 
-Workflow of System:
+## Workflow of System:
+
 1. Records audio in small chunks using the sounddevice library.
 2. Analyse each chunk for speech activity based on volume and frequency.
 3. If speech is detected, it adds the chunk to a buffer.
@@ -49,12 +53,12 @@ continuously listening for and processing new speech commands.
 9. The buffer is reset, and the process repeats, continuously listening for and
 transcribing speech until the program is manually interrupted.
 
-References:
+## References:
 
 [1] https://github.com/AI4Bharat/NPTEL2020- Indian-English-Speech-Dataset
 
 [2] https://github.com/Nikorasu/LiveWhisper
 
-Future Scope:
+## Future Scope:
 
 For working in a noisy environment other than using existing technologies like ANC (Active Noise Cancellation) or Directional microphones, we can implement the proposed neural network based denoising and speech enhancement methods.
