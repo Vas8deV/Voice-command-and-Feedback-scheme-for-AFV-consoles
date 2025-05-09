@@ -17,7 +17,7 @@ This project develops a real-time speech recognition system for a vehicle consol
 
 ## Flowchart:
 ''' mermaid
-flowchart TD
+graph TD
     A([START]) --> B[Load Audio transcription model\n Set voice_mode = False\n Set talking = False\n Set pause_counter = 0\n clear audio buffer]
     B --> C{Listen to Audio\nfrom microphone}
     C --> D{Is audio input\nmeaningful}
