@@ -17,39 +17,39 @@ This project develops a real-time speech recognition system for a vehicle consol
 
 ## Flowchart:
 ``` mermaid
-flowchart TD;
-    A([START]) --> B[Load Audio transcription model\n Set voice_mode = False\n Set talking = False\n Set pause_counter = 0\n clear audio buffer];
-    B --> C{Listen to Audio\nfrom microphone};
-    C --> D{Is audio input\nmeaningful};
-    D -->|yes| E[Set talking = True];
-    D -->|no| F{Is talking == True};
-    F -->|yes| G[Increment\npause_counter];
-    F -->|no| C;
-    E --> H[Collect audio\nchunks and\nappend them to\nthe audio buffer];
-    H --> I{Is audio buffer\nreached limit};
-    I -->|no| C;
-    I -->|yes| J[send audio buffer\ndata as input to\nthe transcription\nmodel];
-    G --> K{Is pause_counter > 2 sec};
-    K -->|no| C;
-    K -->|yes| J;
-    J --> L{Is transcription\nover};
-    L -->|no| J;
-    L -->|yes| M{Is voice_mode == True};
-    M -->|yes| N{Check for\nvoice_mode\ndeactivation\nkeywords};
-    N -->|yes| O[Set voice_mode = False];
-    N -->|no| P[Check for AFV\ncommands];
-    P --> Q[Respond to\ncommand\nactivation by\nspeech];
-    Q --> R[Send command\ncode to AFV\nconsole through\nEthernet interface];
-    R --> S[set talking = False\nClear audio buffer];
-    S --> C;
-    M -->|no| T{Check for\nvoice_mode\nactivation\nkeywords};
-    T -->|yes| U[Set voice_mode = True];
-    T -->|no| S;
-    U --> S;
-    O --> S;
-    Z{Is user interrupted} -->|yes| V([END]);
-    C --> Z;
-    Z -->|no| C;
+flowchart TD
+    A([START]) --> B[Init: Load model,\nSet initial variables]
+    B --> C{Listen for\naudio}
+    C --> D{Audio\nmeaningful?}
+    D -->|yes| E[Set talking=True]
+    D -->|no| F{Is talking?}
+    F -->|yes| G[Increment\npause counter]
+    F -->|no| C
+    E --> H[Collect audio\nto buffer]
+    H --> I{Buffer full?}
+    I -->|no| C
+    I -->|yes| J[Process audio\nwith model]
+    G --> K{Pause > 2s?}
+    K -->|no| C
+    K -->|yes| J
+    J --> L{Transcription\ncomplete?}
+    L -->|no| J
+    L -->|yes| M{Voice mode\nactive?}
+    M -->|yes| N{Deactivation\nkeywords?}
+    N -->|yes| O[Disable\nvoice mode]
+    N -->|no| P[Check AFV\ncommands]
+    P --> Q[Process\ncommand]
+    Q --> R[Send to AFV\nconsole]
+    R --> S[Reset: talking=False,\nClear buffer]
+    S --> C
+    M -->|no| T{Activation\nkeywords?}
+    T -->|yes| U[Enable\nvoice mode]
+    T -->|no| S
+    U --> S
+    O --> S
+    Z{User\ninterrupt?} -->|yes| V([END])
+    C --> Z
+    Z -->|no| C
 ```
 
 ## Features of System:
