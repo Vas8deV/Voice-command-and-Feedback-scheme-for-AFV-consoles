@@ -62,3 +62,10 @@ transcribing speech until the program is manually interrupted.
 ## Future Scope:
 
 For working in a noisy environment other than using existing technologies like ANC (Active Noise Cancellation) or Directional microphones, we can implement the proposed neural network based denoising and speech enhancement methods.
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
