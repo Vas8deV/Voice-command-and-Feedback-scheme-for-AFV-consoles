@@ -16,7 +16,41 @@ This project develops a real-time speech recognition system for a vehicle consol
 - pyttsx3 2.90 (python-TTS text to speech library)
 
 ## Flowchart:
-
+''' mermaid
+flowchart TD
+    A([START]) --> B[Load Audio transcription model\n Set voice_mode = False\n Set talking = False\n Set pause_counter = 0\n clear audio buffer]
+    B --> C{Listen to Audio\nfrom microphone}
+    C --> D{Is audio input\nmeaningful}
+    D -->|yes| E[Set talking = True]
+    D -->|no| F{Is talking == True}
+    F -->|yes| G[Increment\npause_counter]
+    F -->|no| C
+    E --> H[Collect audio\nchunks and\nappend them to\nthe audio buffer]
+    H --> I{Is audio buffer\nreached limit}
+    I -->|no| C
+    I -->|yes| J[send audio buffer\ndata as input to\nthe transcription\nmodel]
+    G --> K{Is pause_counter > 2 sec}
+    K -->|no| C
+    K -->|yes| J
+    J --> L{Is transcription\nover}
+    L -->|no| J
+    L -->|yes| M{Is voice_mode == True}
+    M -->|yes| N{Check for\nvoice_mode\ndeactivation\nkeywords}
+    N -->|yes| O[Set voice_mode = False]
+    N -->|no| P[Check for AFV\ncommands]
+    P --> Q[Respond to\ncommand\nactivation by\nspeech]
+    Q --> R[Send command\ncode to AFV\nconsole through\nEthernet interface]
+    R --> S[set talking = False\nClear audio buffer]
+    S --> C
+    M -->|no| T{Check for\nvoice_mode\nactivation\nkeywords}
+    T -->|yes| U[Set voice_mode = True]
+    T -->|no| S
+    U --> S
+    O --> S
+    Z{Is user interrupted} -->|yes| V([END])
+    C --> Z
+    Z -->|no| C
+'''
 ![flowcdraft](https://github.com/Vas8deV/Voice-command-and-Feedback-scheme-for-AFV-consoles/assets/126313237/da8a7828-1584-4865-8ceb-0a7d0a332ca5)
 
 ## Features of System:
