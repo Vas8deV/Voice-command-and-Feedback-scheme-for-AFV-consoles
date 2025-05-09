@@ -16,8 +16,8 @@ This project develops a real-time speech recognition system for a vehicle consol
 - pyttsx3 2.90 (python-TTS text to speech library)
 
 ## Flowchart:
-''' mermaid
-graph TD;
+``` mermaid
+flowchart TD;
     A([START]) --> B[Load Audio transcription model\n Set voice_mode = False\n Set talking = False\n Set pause_counter = 0\n clear audio buffer];
     B --> C{Listen to Audio\nfrom microphone};
     C --> D{Is audio input\nmeaningful};
@@ -50,7 +50,7 @@ graph TD;
     Z{Is user interrupted} -->|yes| V([END]);
     C --> Z;
     Z -->|no| C;
-'''
+```
 ![flowcdraft](https://github.com/Vas8deV/Voice-command-and-Feedback-scheme-for-AFV-consoles/assets/126313237/da8a7828-1584-4865-8ceb-0a7d0a332ca5)
 
 ## Features of System:
